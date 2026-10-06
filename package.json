@@ -1,0 +1,51 @@
+{
+  "name": "agent-starter-node",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint \"**/*.{ts,js}\"",
+    "lint:fix": "eslint --fix \"**/*.{ts,js}\"",
+    "format": "prettier --write \"**/*.{ts,js,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,js,json,md}\"",
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "dev": "node src/main.ts dev",
+    "start": "node src/server/app.ts",
+    "server:start": "node src/server/app.ts",
+    "agent:start": "node src/main.ts start",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:check": "drizzle-kit check",
+    "db:seed": "node --env-file=.env.local node_modules/.pnpm/node_modules/tsx/dist/cli.mjs src/db/seed.ts",
+    "server:dev": "node src/server/app.ts"
+  },
+  "engines": {
+    "node": ">=24.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "@types/node": "^24.10.1",
+    "drizzle-kit": "^0.31.10",
+    "eslint": "^9.39.4",
+    "globals": "^16.5.0",
+    "jiti": "^2.6.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.58.1",
+    "vitest": "^4.1.4"
+  },
+  "dependencies": {
+    "@livekit/agents": "^1.6.3",
+    "@livekit/agents-plugin-openai": "1.8.1",
+    "@livekit/plugins-ai-coustics": "^0.2.14",
+    "@livekit/rtc-node": "^0.13.31",
+    "dotenv": "^17.4.1",
+    "drizzle-orm": "^0.45.2",
+    "postgres": "^3.4.9",
+    "zod": "^4.4.3"
+  }
+}
